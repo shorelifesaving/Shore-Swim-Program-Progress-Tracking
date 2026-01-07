@@ -1,38 +1,37 @@
 let currentProgram = "Starfish";
-let finalized = false;
 
 function loadProgram() {
-  const program = programs[currentProgram];
   const container = document.getElementById("levels");
   container.innerHTML = "";
 
+  const program = programs[currentProgram];
+
   Object.entries(program).forEach(([level, skills]) => {
     const levelDiv = document.createElement("div");
-    levelDiv.className = "level-grid";
+    levelDiv.className = "level";
 
-    const levelTitle = document.createElement("h2");
-    levelTitle.innerText = level;
+    const h2 = document.createElement("h2");
+    h2.innerText = level;
+    levelDiv.appendChild(h2);
 
-    const skillsDiv = document.createElement("div");
-    skillsDiv.className = "skills";
-
-    skills.forEach(skill => {
+    skills.forEach((skill, i) => {
       const label = document.createElement("label");
       label.className = "skill";
 
       const cb = document.createElement("input");
       cb.type = "checkbox";
+      cb.dataset.level = level;
+      cb.dataset.index = i;
 
       label.appendChild(cb);
       label.append(" " + skill);
-      skillsDiv.appendChild(label);
+      levelDiv.appendChild(label);
     });
 
-    levelDiv.appendChild(levelTitle);
-    levelDiv.appendChild(skillsDiv);
     container.appendChild(levelDiv);
   });
 }
+
 
 loadProgram();
 
