@@ -1,1 +1,45 @@
+<link rel="stylesheet" href="styles.css">
+<script defer src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jost:wght@500&display=swap" rel="stylesheet">
+  <title>Aquatic Manager checklist</title>
+</head>
+<body>
 
+  <h1>Progress Report</h1>
+
+<p><strong>Name:</strong> 
+  <input type="text" id="swimmerName" value="Johnny Sue" class="styled-input">
+</p>
+
+<p><strong>Date:</strong> 
+  <input type="date" id="swimDate" value="2004-07-14" class="styled-input">
+</p>
+
+<p><strong>Instructor:</strong> 
+  <input type="text" id="instructorName" value="Simona V." class="styled-input">
+</p>
+
+
+<div class="program-select">
+  <label for="programSelect">Program</label>
+  <select id="programSelect" onchange="loadProgram()">
+    <option value="Starfish">Starfish</option>
+    <option value="Sea Turtle">Sea Turtle</option>
+    <option value="Sunfish">Sunfish</option>
+  </select>
+</div>
+
+
+  <div id="levels"></div>
+
+  <br>
+  <button onclick="saveProgress()">Save Final Report</button>
+
+</body>
+</html>
+
+<button onclick="publishReport()">Publish to Parent</button>
