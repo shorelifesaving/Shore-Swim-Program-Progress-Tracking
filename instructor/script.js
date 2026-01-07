@@ -227,18 +227,22 @@ async function publishReport() {
   alert("Report is now visible to parents.");
 }
 function finalizeReport() {
-  reportFinalized = true;
+  const recommendation = document.getElementById("manualRecommendation").value;
 
-  alert("Report finalized. Parents can now view this report.");
+  if (!recommendation) {
+    alert("Please enter a level to register in.");
+    return;
+  }
 
-  // Disable all checkboxes
   document
     .querySelectorAll("input[type='checkbox']")
     .forEach(cb => cb.disabled = true);
 
-  // Store finalized report locally (TEMP – Supabase later)
   localStorage.setItem("shoreSwimFinalReport", JSON.stringify({
-    program: currentProgram,
-    finalized: true
+    finalized: true,
+    recommendation: recommendation
   }));
+
+  alert("Report finalized and ready to publish.");
 }
+
