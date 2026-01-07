@@ -107,3 +107,6 @@ calculateRecommendation();
 .eq("status", "published")
 
 document.body.innerHTML = "Report not available yet.";
+
+document.getElementById("recommendation").innerText =
+  "Level to register in: " + finalReport.recommendation;
