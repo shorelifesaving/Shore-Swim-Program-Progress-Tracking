@@ -1,3 +1,4 @@
+let reportFinalized = false;
 const programs = {
   Starfish: {
     "Starfish 1": [
@@ -224,4 +225,20 @@ async function publishReport() {
     .eq("id", reportId);
 
   alert("Report is now visible to parents.");
+}
+function finalizeReport() {
+  reportFinalized = true;
+
+  alert("Report finalized. Parents can now view this report.");
+
+  // Disable all checkboxes
+  document
+    .querySelectorAll("input[type='checkbox']")
+    .forEach(cb => cb.disabled = true);
+
+  // Store finalized report locally (TEMP – Supabase later)
+  localStorage.setItem("shoreSwimFinalReport", JSON.stringify({
+    program: currentProgram,
+    finalized: true
+  }));
 }
