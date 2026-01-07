@@ -1,3 +1,6 @@
+const finalReport = JSON.parse(
+  localStorage.getItem("shoreSwimFinalReport")
+);
 const READ_ONLY = true; 
 
 const programData = {
@@ -59,7 +62,13 @@ const programData = {
   ]
 };
 
-
+if (!finalReport || !finalReport.finalized) {
+  document.body.innerHTML = `
+    <h1>Progress Report</h1>
+    <p>This report is not yet available.</p>
+  `;
+  throw new Error("Report not finalized");
+}
 const levelsContainer = document.getElementById("levels");
 levelsContainer.innerHTML = "";
 
