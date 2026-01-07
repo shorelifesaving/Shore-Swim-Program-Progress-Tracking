@@ -101,28 +101,6 @@ function saveProgress() {
   alert("Parent view — saving disabled");
 }
 
-function calculateRecommendation() {
-  const levels = document.querySelectorAll(".level");
-  let recommended = "";
-
-  levels.forEach((level, index) => {
-    const checkboxes = level.querySelectorAll("input[type='checkbox']");
-    const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-
-    if (allChecked) {
-      const nextLevel = levels[index + 1];
-      if (nextLevel) {
-        recommended = nextLevel.querySelector("h2").innerText;
-      }
-    } else if (!recommended) {
-      recommended = level.querySelector("h2").innerText;
-    }
-  });
-
-  document.getElementById("recommendation").innerText =
-    "Level to register in: " + recommended;
-}
-
 // RUN ON LOAD
 calculateRecommendation();
 
