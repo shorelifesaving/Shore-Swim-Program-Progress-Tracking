@@ -1,1 +1,80 @@
+body {
+  font-family: 'EB Garamond', serif;
+  background-color: #f8f9f9;
+  color: #6e5f49;
+  padding: 40px;
+  font-size: 18px;
+}
 
+h1, h2 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+}
+
+.level {
+  margin-bottom: 30px;
+}
+
+.skill {
+  display: block;
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.styled-input {
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: #6e5f49;
+  background-color: transparent; /* no background */
+  border: none; /* no border */
+  padding: 0; /* no extra padding */
+  margin-left: 5px;
+  min-width: 200px;
+}
+
+.styled-input:focus {
+  outline: none; /* remove focus border */
+}
+
+
+button {
+  background-color: #ffe5ec;
+  color: #6e5f49;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+}
+
+.program-select {
+  margin-bottom: 25px;
+}
+
+.program-select label {
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: #6e5f49;
+}
+
+.program-select select {
+  font-family: 'EB Garamond', serif;
+  font-size: 18px;
+  color: #6e5f49;
+
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 5px;
+
+  appearance: none;        /* remove default dropdown styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  cursor: pointer;
+}
+
+.program-select select:focus {
+  outline: none;
+}
