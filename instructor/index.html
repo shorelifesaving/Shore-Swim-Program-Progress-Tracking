@@ -1,31 +1,32 @@
-<link rel="stylesheet" href="styles.css">
-<script defer src="script.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Aquatic Manager Checklist</title>
+
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Jost:wght@500&display=swap" rel="stylesheet">
-  <title>Aquatic Manager checklist</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body>
 
-  <h1>Progress Report</h1>
+<h1>Progress Report</h1>
 
-<p><strong>Name:</strong> 
+<p><strong>Name:</strong>
   <input type="text" id="swimmerName" value="Johnny Sue" class="styled-input">
 </p>
 
-<p><strong>Date:</strong> 
+<p><strong>Date:</strong>
   <input type="date" id="swimDate" value="2004-07-14" class="styled-input">
 </p>
 
-<p><strong>Instructor:</strong> 
+<p><strong>Instructor:</strong>
   <input type="text" id="instructorName" value="Simona V." class="styled-input">
 </p>
 
-
 <div class="program-select">
-  <label for="programSelect">Program</label>
+  <label>Program</label>
   <select id="programSelect" onchange="loadProgram()">
     <option value="Starfish">Starfish</option>
     <option value="Sea Turtle">Sea Turtle</option>
@@ -33,17 +34,14 @@
   </select>
 </div>
 
+<div id="levels"></div>
 
-  <div id="levels"></div>
-
-  <p><strong>Level to register in:</strong> 
-  <input type="text" id="manualRecommendation" value="Level x" class="styled-input">
+<p><strong>Level to register in:</strong>
+  <input type="text" id="manualRecommendation" class="styled-input">
 </p>
-  
-  <br>
-  <button onclick="finalizeReport()">Finalize Report</button>
+
+<button onclick="finalizeReport()">Finalize Report</button>
+<button onclick="publishReport()">Publish to Parent</button>
 
 </body>
 </html>
-
-<button onclick="publishReport()">Publish to Parent</button>
